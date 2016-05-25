@@ -1,0 +1,12 @@
+{
+    "name": "shopware-missing-mixins",
+    "version": "0.1.0",
+    "description": "missing basic less-mixins for Shopware 5",
+    "main": "all.less",
+    "license": "MIT",
+    "keywords": [
+        "shopware",
+        "less",
+        "mixins"
+    ]
+}
