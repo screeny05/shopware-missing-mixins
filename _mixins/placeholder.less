@@ -1,0 +1,6 @@
+.placeholder(@lambda) {
+    &::-webkit-input-placeholder { @lambda(); }
+    &::-moz-placeholder { opacity: 1; @lambda(); }
+    &:-ms-input-placeholder { @lambda(); }
+    &:-moz-placeholder { opacity: 1; @lambda(); }
+}

@@ -1,0 +1,26 @@
+.path-var(@resource-path) {
+    @path: '/themes/Frontend/@{theme-folder-base}/frontend/_public/src/@{resource-path}';
+}
+
+.path-image-var(@filename) {
+    .path-var('@{theme-folder-img}/@{filename}');
+}
+
+.path-font-var(@filename) {
+    .path-var('@{theme-folder-fonts}/@{filename}');
+}
+
+.path(@property, @path) {
+    .path-var(@path);
+    @{property}: url('@{path}');
+}
+
+.path-image(@property, @filename) {
+    .path-image-var(@filename);
+    @{property}: url('@{path}');
+}
+
+.path-font(@property, @filename) {
+    .path-font-var(@filename);
+    @{property}: url('@{path}');
+}

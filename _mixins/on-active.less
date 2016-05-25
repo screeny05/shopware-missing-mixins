@@ -1,0 +1,21 @@
+.hide-on-active(@active-target: '.is--active') {
+    @active-target-escaped: ~'@{active-target}';
+    @{active-target-escaped} & { display: none; }
+}
+
+.show-on-active(@display: block, @active-target: '.is--active') {
+    @active-target-escaped: ~'@{active-target}';
+    display: none;
+    @{active-target-escaped} & { display: @display; }
+}
+
+.on-active(@child-display: block, @active-target: '.is--active', @child-show '.on--active-show', @child-hide: '.on--active-hide') {
+    @child-show-escaped: ~'@{child-show}';
+    @child-hide-escaped: ~'@{child-hide}';
+    @active-target-escaped: ~'@{active-target}';
+
+    @{child-hide-escaped} { display: @child-display; }
+    @{child-show-escaped} { display: none; }
+    @{active-target-escaped} @{child-show-escaped} { display: @child-display; }
+    @{active-target-escaped} @{child-hide-escaped} { display: none; }
+}

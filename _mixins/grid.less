@@ -1,0 +1,40 @@
+.make-columns(@count, @name, @i: 1) when (@i <= @count) {
+    @width: @i * 100% / @count;
+
+    .col--@{name}-@{i} {
+        width: @width;
+    }
+    .col--@{name}-offset-@{i} {
+        margin-left: @width;
+    }
+    .make-columns(@count, @name, (@i + 1));
+}
+
+.make-column-float(@name) {
+    [class*=' col--@{name}'],
+    [class^='col--@{name}'] {
+        .is-col();
+    }
+
+    .col--@{name}-no-offset {
+        margin-left: 0;
+    }
+}
+
+.make-col(@width) {
+    .is-col();
+    width: @width * 100% / @grid-columns;
+    margin: 0;
+}
+
+.make-offset(@width) {
+    margin-left: @width * 100% / @grid-columns;
+}
+
+.is-col() {
+    float: left;
+    display: block;
+    position: relative;
+    /* prevent col from collapsing */
+    min-height: 1px;
+}

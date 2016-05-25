@@ -1,0 +1,20 @@
+.aspect-ratio(@width, @height) {
+    @ratio: (@height / @width);
+    height: 0;
+    padding-top: (100% * @ratio);
+}
+
+.aspect-ratio-target(@width, @height, @target: '> *') {
+    @target-escaped: ~'@{target}';
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        .aspect-ratio(@width, @height);
+    }
+
+    @{target-escaped} {
+        .fill();
+    }
+}

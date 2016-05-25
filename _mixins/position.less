@@ -1,0 +1,23 @@
+.position(@position, @top, @right, @bottom, @left) {
+    position: @position;
+    top: @top;
+    left: @left;
+    right: @right;
+    bottom: @bottom;
+}
+
+.position(@top, @right, @bottom, @left) {
+    .position(absolute, @top, @right, @bottom, @left);
+}
+
+.position(@spacing: 0) {
+    .position(@spacing, @spacing, @spacing, @spacing);
+}
+
+.position(@vertical, @horizontal) {
+    .position(@vertical, @horizontal, @vertical, @horizontal);
+}
+
+.position(@top, @horizontal, @bottom) {
+    .position(@top, @horizontal, @bottom, @horizontal);
+}

@@ -1,0 +1,13 @@
+.line-through(@color: @color-primary) {
+    position: relative;
+    text-decoration: none;
+
+    &:before {
+        content: '';
+        background-image: linear-gradient(transparent 50%, @color 0);
+        background-size: 2px;
+        background-repeat: repeat-x;
+        background-position: center;
+        .fill();
+    }
+}

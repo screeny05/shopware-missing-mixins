@@ -1,0 +1,10 @@
+.calc(@property, @calculation) {
+    @{property}: -webkit-calc(~'@{calculation}');
+    @{property}:    -moz-calc(~'@{calculation}');
+    @{property}:         calc(~'@{calculation}');
+}
+
+.calc(@property, @calculation, @fallback) {
+    @{property}: @fallback;
+    .calc(@property, @calculation);
+}
