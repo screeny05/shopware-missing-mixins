@@ -1,4 +1,8 @@
 # shopware-missing-mixins
+![license](https://img.shields.io/npm/l/shopware-missing-mixins.svg?style=flat-square)
+[![npm](https://img.shields.io/npm/v/shopware-missing-mixins.svg?style=flat-square)]()
+[![Bower](https://img.shields.io/bower/v/shopware-missing-mixins.svg?style=flat-square)]()
+
 less-mixins to help you with your shopware-frontend
 
 ### how to use
