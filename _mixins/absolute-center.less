@@ -1,18 +1,18 @@
-.absolute-center() {
-    position: absolute;
+.absolute-center(@position: absolute) {
+    position: @position;
     top: 50%;
     left: 50%;
     .transform(translate(-50%, -50%));
 }
 
-.absolute-center-vertical() {
-    position: absolute;
+.absolute-center-horizontal(@position: absolute) {
+    position: @position;
     left: 50%;
     .transform(translateX(-50%));
 }
 
-.absolute-center-horizontal() {
-    position: absolute;
+.absolute-center-vertical(@position: absolute) {
+    position: @position;
     top: 50%;
     .transform(translateY(-50%));
 }
