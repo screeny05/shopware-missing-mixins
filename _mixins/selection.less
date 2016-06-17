@@ -2,3 +2,7 @@
     &::selection { @lambda(); }
     &::-moz-selection { @lambda(); }
 }
+
+.selection(@property, @value) {
+    .selection({ @{property}: @selection; });
+}

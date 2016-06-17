@@ -4,3 +4,7 @@
     &:-ms-input-placeholder { @lambda(); }
     &:-moz-placeholder { opacity: 1; @lambda(); }
 }
+
+.placeholder(@property, @value) {
+    .placeholder({ @{property}: @value; });
+}

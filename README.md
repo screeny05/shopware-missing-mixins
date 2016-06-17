@@ -5,7 +5,7 @@
 
 less-mixins to help you with your shopware-frontend
 
-### how to use
+### how to use?
 1. include all.less
 2. adjust variables in your theme to your liking
 3. ???
@@ -106,3 +106,6 @@ resulting in css like this:
 ```
 
 read more about the magical powers of less' detached rulesets in [the less docs](http://lesscss.org/features/#detached-rulesets-feature).
+
+### what's new?
+* 0.1.2 - add property-value mixins for placeholder & selection
