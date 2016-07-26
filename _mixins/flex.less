@@ -133,6 +133,21 @@
     }
 }
 
+.align-self(@align: stretch) {
+    -ms-flex-item-align: @align;
+    -webkit-align-self: @align;
+            align-self: @align;
+
+    & when (@align = start) {
+        -webkit-align-self: ~"flex-@{align}";
+        align-self: ~"flex-@{align}";
+    }
+    & when (@align = end) {
+        -webkit-align-self: ~"flex-@{align}";
+        align-self: ~"flex-@{align}";
+    }
+}
+
 .order(@number) {
     -webkit-box-ordinal-group: @number;
        -moz-box-ordinal-group: @number;
