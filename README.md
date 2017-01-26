@@ -118,6 +118,7 @@ The mixin creates classes for removing the gutter to the right, to the left or o
 
 
 ### what's new?
+* 0.4.1 - fix path mixin when in vendor-folder
 * 0.4.0 - add `.create-emotion-grid-push` mixin
 * 0.3.2 - fix relative paths for php less-compiler
 * 0.3.1 - path now returns relative paths. fix for virtual paths
