@@ -1,0 +1,44 @@
+/**
+ * this mixin creates 3 classes for each possible width within a emotion-grid. e.g.:
+ * * .emotion--push-20px - makes the widget 20px wider on all states, on both sides
+ * * .emotion--push-20px-[left|right] - makes the widget 20px wider on all states, on the given side
+ */
+.create-emotion-grid-single-push(@state, @col-count, @push-width) {
+    .for(@col-count); .-each(@cols) {
+        @width-percent: 100% / @col-count * @cols;
+        @push-width-double: @push-width * 2;
+
+        .emotion--column-@{col-count} .col-@{state}-@{cols}.emotion--push-@{push-width}-left,
+        .emotion--column-@{col-count} .col-@{state}-@{cols}.emotion--push-@{push-width}-right {
+            .calc(width, ~'@{width-percent} + @{push-width}', @width-percent);
+        }
+
+        .emotion--column-@{col-count} .col-@{state}-@{cols}.emotion--push-@{push-width} {
+            .calc(width, ~'@{width-percent} + @{push-width-double}', @width-percent);
+        }
+    }
+}
+
+/**
+ * this mixin adds the negative margin needed to pull emotion-widgets to the left
+ */
+.create-emotion-grid-single-push-margin(@col-count, @push-width) {
+    .emotion--container.emotion--column-@{col-count} .emotion--push-@{push-width},
+    .emotion--container.emotion--column-@{col-count} .emotion--push-@{push-width}-left {
+        margin-left: @push-width * -1;
+    }
+}
+
+/**
+ * this mixin creates all pushes for a given col-count and a given push-width
+ * @example
+ * .create-emotion-grid-push(12, 20px);
+ */
+.create-emotion-grid-push(@col-count, @push-width) {
+    .create-emotion-grid-single-push-margin(@col-count, @push-width);
+    .create-emotion-grid-single-push(xs, @col-count, @push-width);
+    .screen-ms({ .create-emotion-grid-single-push(s, @col-count, @push-width); });
+    .screen-sm({ .create-emotion-grid-single-push(m, @col-count, @push-width); });
+    .screen-md({ .create-emotion-grid-single-push(l, @col-count, @push-width); });
+    .screen-lg({ .create-emotion-grid-single-push(xl, @col-count, @push-width); });
+}
