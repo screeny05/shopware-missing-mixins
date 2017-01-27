@@ -31,6 +31,19 @@
     margin-left: @width * 100% / @grid-columns;
 }
 
+.make-gutter(@size, @size-name, @suffix: ~'') {
+    .row--gutter-@{size-name}@{suffix} {
+        > [class^="col--"],
+        > [class*=" col--"] {
+            padding-left: @size;
+            padding-right: @size;
+
+            &:last-child { padding-right: 0; }
+            &:first-child { padding-left: 0; }
+        }
+    }
+}
+
 .is-col() {
     float: left;
     display: block;

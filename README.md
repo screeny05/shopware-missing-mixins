@@ -119,6 +119,7 @@ The mixin creates classes for removing the gutter to the right, to the left or o
 
 
 ### what's new?
+* 0.6.0 - add `.make-gutter` mixin
 * 0.5.0 - add `.create-spacing` mixin and spacing-variables
 * 0.4.1 - fix path mixin when in vendor-folder
 * 0.4.0 - add `.create-emotion-grid-push` mixin
@@ -127,3 +128,7 @@ The mixin creates classes for removing the gutter to the right, to the left or o
 * 0.3.0 - add column mixins
 * 0.2.0 - add hyphenation helper
 * 0.1.2 - add property-value mixins for placeholder & selection
+
+### roadmap
+* [breaking] rename screen-sizes to shopware-standard
+* [breaking] rename `.make-` mixins to `.create-`
