@@ -1,0 +1,36 @@
+.create-spacing-single(@name, @property, @size, @size-name, @suffix: ~'') {
+    .@{name}-@{size-name}@{suffix} { @{property}: @size; }
+    .@{name}-@{size-name}-t@{suffix} { @{property}-top: @size; }
+    .@{name}-@{size-name}-r@{suffix} { @{property}-right: @size; }
+    .@{name}-@{size-name}-b@{suffix} { @{property}-bottom: @size; }
+    .@{name}-@{size-name}-l@{suffix} { @{property}-left: @size; }
+    .@{name}-@{size-name}-x@{suffix} {
+        @{property}-right: @size;
+        @{property}-left: @size;
+    }
+    .@{name}-@{size-name}-y@{suffix} {
+        @{property}-top: @size;
+        @{property}-bottom: @size;
+    }
+}
+
+.create-spacing-pair(@size, @size-name, @suffix: ~'') {
+    .create-spacing-single(p, padding, @size, @size-name, @suffix);
+    .create-spacing-single(m, margin, @size, @size-name, @suffix);
+}
+
+.create-spacing-set(@size, @size-name) {
+    .create-spacing-pair(@size, @size-name);
+    .screen-ms({ .create-spacing-pair(@size, @size-name, ~'\@ms'); });
+    .screen-sm({ .create-spacing-pair(@size, @size-name, ~'\@sm'); });
+    .screen-md({ .create-spacing-pair(@size, @size-name, ~'\@md'); });
+    .screen-lg({ .create-spacing-pair(@size, @size-name, ~'\@lg'); });
+}
+
+.create-spacing() {
+    .create-spacing-set(@base-spacing-xs, xs);
+    .create-spacing-set(@base-spacing-ms, ms);
+    .create-spacing-set(@base-spacing-sm, sm);
+    .create-spacing-set(@base-spacing-md, md);
+    .create-spacing-set(@base-spacing-lg, lg);
+}

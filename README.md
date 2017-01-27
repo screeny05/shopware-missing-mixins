@@ -37,6 +37,7 @@ less-mixins to help you with your shopware-frontend
 * media-query-mixins
 * triangle-mixin
 * emotion-grid-push (see below)
+* spacing-generation
 
 #### media-mixins
 tired of typing `@media screen and (min-width: @phoneLandscapeViewportWidth)`?
@@ -118,6 +119,7 @@ The mixin creates classes for removing the gutter to the right, to the left or o
 
 
 ### what's new?
+* 0.5.0 - add `.create-spacing` mixin and spacing-variables
 * 0.4.1 - fix path mixin when in vendor-folder
 * 0.4.0 - add `.create-emotion-grid-push` mixin
 * 0.3.2 - fix relative paths for php less-compiler
