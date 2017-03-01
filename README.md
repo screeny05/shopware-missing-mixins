@@ -119,6 +119,7 @@ The mixin creates classes for removing the gutter to the right, to the left or o
 
 
 ### what's new?
+* 0.6.1 - fix mixins using `.fill` instead of `.position`
 * 0.6.0 - add `.make-gutter` mixin
 * 0.5.0 - add `.create-spacing` mixin and spacing-variables
 * 0.4.1 - fix path mixin when in vendor-folder
