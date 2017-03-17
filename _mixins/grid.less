@@ -1,4 +1,4 @@
-.make-columns(@count, @name, @i: 1) when (@i <= @count) {
+.create-grid-columns(@count, @name, @i: 1) when (@i <= @count) {
     @width: @i * 100% / @count;
 
     .col--@{name}-@{i} {
@@ -7,10 +7,10 @@
     .col--@{name}-offset-@{i} {
         margin-left: @width;
     }
-    .make-columns(@count, @name, (@i + 1));
+    .create-grid-columns(@count, @name, (@i + 1));
 }
 
-.make-column-float(@name) {
+.create-grid-column-float(@name) {
     [class*=' col--@{name}'],
     [class^='col--@{name}'] {
         .is-col();
@@ -21,17 +21,17 @@
     }
 }
 
-.make-col(@width) {
+.create-grid-col(@width) {
     .is-col();
     width: @width * 100% / @grid-columns;
     margin: 0;
 }
 
-.make-offset(@width) {
+.create-grid-offset(@width) {
     margin-left: @width * 100% / @grid-columns;
 }
 
-.make-gutter(@size, @size-name, @suffix: ~'') {
+.create-grid-gutter(@size, @size-name, @suffix: ~'') {
     .row--gutter-@{size-name}@{suffix} {
         > [class^="col--"],
         > [class*=" col--"] {

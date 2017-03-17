@@ -1,4 +1,4 @@
-.make-font-face(@name, @filename, @font-weight: 400, @font-style: normal, @svg-font-id: webfontregular) {
+.create-font-face(@name, @filename, @font-weight: 400, @font-style: normal, @svg-font-id: webfontregular) {
     .path-font-var(@filename);
 
     font-family: @name;
@@ -12,7 +12,7 @@
          url('@{path}.svg#@{svg-font-id}') format('svg');
 }
 
-.make-font-face-woff(@name, @filename, @font-weight: 400, @font-style: normal) {
+.create-font-face-woff(@name, @filename, @font-weight: 400, @font-style: normal) {
     .path-font-var(@filename);
 
     font-family: @name;

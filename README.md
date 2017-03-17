@@ -119,6 +119,9 @@ The mixin creates classes for removing the gutter to the right, to the left or o
 
 
 ### what's new?
+* 1.0.0:
+    * fix spacing mixins to correctly use the cascade. also introduces `-none` spacings with a value of `0`
+    * rename `.make-` mixins to `.create-`
 * 0.6.1 - fix mixins using `.fill` instead of `.position`
 * 0.6.0 - add `.make-gutter` mixin
 * 0.5.0 - add `.create-spacing` mixin and spacing-variables
@@ -132,4 +135,3 @@ The mixin creates classes for removing the gutter to the right, to the left or o
 
 ### roadmap
 * [breaking] rename screen-sizes to shopware-standard
-* [breaking] rename `.make-` mixins to `.create-`

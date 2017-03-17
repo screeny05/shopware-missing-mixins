@@ -19,18 +19,19 @@
     .create-spacing-single(m, margin, @size, @size-name, @suffix);
 }
 
-.create-spacing-set(@size, @size-name) {
-    .create-spacing-pair(@size, @size-name);
-    .screen-ms({ .create-spacing-pair(@size, @size-name, ~'\@ms'); });
-    .screen-sm({ .create-spacing-pair(@size, @size-name, ~'\@sm'); });
-    .screen-md({ .create-spacing-pair(@size, @size-name, ~'\@md'); });
-    .screen-lg({ .create-spacing-pair(@size, @size-name, ~'\@lg'); });
+.create-spacing-set(@suffix: ~'') {
+    .create-spacing-pair(0, none, @suffix);
+    .create-spacing-pair(@base-spacing-ms, ms, @suffix);
+    .create-spacing-pair(@base-spacing-xs, xs, @suffix);
+    .create-spacing-pair(@base-spacing-sm, sm, @suffix);
+    .create-spacing-pair(@base-spacing-md, md, @suffix);
+    .create-spacing-pair(@base-spacing-lg, lg, @suffix);
 }
 
 .create-spacing() {
-    .create-spacing-set(@base-spacing-xs, xs);
-    .create-spacing-set(@base-spacing-ms, ms);
-    .create-spacing-set(@base-spacing-sm, sm);
-    .create-spacing-set(@base-spacing-md, md);
-    .create-spacing-set(@base-spacing-lg, lg);
+    .create-spacing-set();
+    .screen-ms({ .create-spacing-set(~'\@ms'); });
+    .screen-sm({ .create-spacing-set(~'\@sm'); });
+    .screen-md({ .create-spacing-set(~'\@md'); });
+    .screen-lg({ .create-spacing-set(~'\@lg'); });
 }
