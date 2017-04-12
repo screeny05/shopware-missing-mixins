@@ -137,3 +137,4 @@ The mixin creates classes for removing the gutter to the right, to the left or o
 
 ### roadmap
 * [breaking] rename screen-sizes to shopware-standard
+* deprecate `.screen-*` without detached ruleset
