@@ -119,6 +119,7 @@ The mixin creates classes for removing the gutter to the right, to the left or o
 
 
 ### what's new?
+* 1.1.0 - add `@spacing-*` to allow for usage in a more shopware-esque style of classes.
 * 1.0.1 - remove `word-break`-property from hyphenate-mixin
 * 1.0.0:
     * fix spacing mixins to correctly use the cascade. also introduces `-none` spacings with a value of `0`
